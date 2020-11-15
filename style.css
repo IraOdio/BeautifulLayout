@@ -1,0 +1,49 @@
+header{
+    height: 40px;
+    background-color: #efe9e9;
+}
+.main-grid-layout{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-areas:
+            "f s t"
+            "o o o";
+}
+.main-grid-layout [class*="main-col"]{
+
+}
+.first-main-col{
+    grid-area: f;
+}
+.second-main-col{
+    grid-area: s;
+}
+.thirty-main-col{
+    grid-area: t;
+}
+.other-main-col{
+    grid-area: o;
+}
+.nav-link{
+    color: #6400ff;
+}
+.carousel{
+    width: 100%;
+    --max-width: 600px;
+    margin: 0 auto;
+}
+.main-flex-layout{
+    margin-top: 5px;
+}
+.main-flex-layout .card img{
+    max-height: 200px;
+}
+
+/* Samples Page*/
+
+
+@media screen and (max-width: 1024px){
+
+}

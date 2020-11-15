@@ -1,0 +1,12 @@
+.layout-figma-info{
+    position: absolute;
+    background-color: white;
+    top:10px; left:10px;
+    padding: 5px;
+    border: 1px solid gray;
+    z-index: 111111;
+    opacity: 0.3;
+}
+.layout-figma-info:hover{
+    opacity: 1;
+}

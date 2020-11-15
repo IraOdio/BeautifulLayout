@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../libs/bootstrap.min.css">
+    <link rel="stylesheet" href="./../style.css">
+    <title>Образцы</title>
+</head>
+<body>
+<div id="root">
+    <header>
+        <div class="nav justify-content-center">
+            <div v-for="item in secondNav" class="nav-item">
+                <a :href="item.link" class="nav-link">
+                    {{ item.name }}
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-flex-layout container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="text-center text-danger">Внимание. Нереализованные образцы - не нашедшие своего применения, могут быть не адаптивны.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="mt-4 col-12 col-lg-6">
+                    <div class="card" style="">
+                        <img src="./img/rectangle1.png" class="card-img-top" alt="rectangle1">
+                        <div class="card-body">
+                            <h5 class="card-title">Меню-треугольник</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                            <a href="./RectangleNav_v1/index.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 col-12 col-lg-6">
+                    <div class="card" style="">
+                        <img src="./img/slider1.png" class="card-img-top" alt="slider1">
+                        <div class="card-body">
+                            <h5 class="card-title">3D-Слайдер №1</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                            <a href="./SliderJobs_v1/index.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 col-12 col-lg-6">
+                    <div class="card" style="">
+                        <img src="./img/catalog1.png" class="card-img-top" alt="catalog1">
+                        <div class="card-body">
+                            <h5 class="card-title">каталог</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                            <a href="./Portfolio_v1/index.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="./../libs/bootstrap.bundle.min.js"></script>
+<script src="./../libs/vue.js"></script>
+<script src="./../script.js"></script>
+</body>
+</html>

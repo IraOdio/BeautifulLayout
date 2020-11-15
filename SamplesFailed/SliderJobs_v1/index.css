@@ -1,0 +1,105 @@
+body{
+    background-image: url("res/img/room1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    max-height: 99vh;
+    overflow: hidden;
+}
+.self-List{
+    background-color: #ffffff;
+    width: 20vw;
+    height: 100vh;
+    position: absolute;
+    top:0; left:70px;
+}
+p{
+    font-family: "Lohit Assamese",sans-serif;
+}
+p{
+    font-family: "DejaVu Serif";
+    padding: 3px ;
+}
+.jobs{
+    margin-left: 425px;
+    margin-top: 100px;
+}
+.jobs-slider{
+    transform-style: preserve-3d;
+    perspective: 1290px;
+    --VrotateX:50deg;
+    --VrotateZ:10deg;
+    --VtranslateX:400px;
+    --Vscale:1.04;
+}
+.job-item ,.job-title, .job-description{
+    text-align: center;
+
+}
+.job-item{
+    max-width: 480px;
+}
+.job-transformation{
+    position: absolute;
+    transform: rotateX(var(--VrotateX)) rotateZ(var(--VrotateZ)) translateX(var(--VtranslateX));
+    transition: .4s;
+}
+.job-transformation.job-show{
+    transform: rotateX(var(--VrotateX)) rotateZ(var(--VrotateZ));
+}
+.job-item:not([class*="job-show"]) .job-picture{
+    /*filter:blur(0.1px);*/
+}
+.job-item:not([class*="job-show"]){
+    z-index: 0 !important;
+}
+.job-item:not([class*="job-show"]):nth-last-child(1){
+    transform: rotateX(var(--VrotateX))
+    rotateZ(var(--VrotateZ)) translateX(var(--VtranslateX))
+    translateZ(40px);
+}
+.job-item:not([class*="job-show"]) .job-title{
+    display: none;
+}
+.job-transformation:hover{
+    transform: rotateX(var(--VrotateX)) rotateZ(var(--VrotateZ)) translateX(var(--VtranslateX)) scale(var(--Vscale));
+}
+.job-transformation:nth-last-child(1):hover{
+    transform: rotateX(var(--VrotateX))
+    rotateZ(var(--VrotateZ))
+    translateX(var(--VtranslateX))
+    scale(var(--Vscale))
+    translateZ(40px);
+}
+.job-transformation.job-show:hover{
+    transform: rotateX(var(--VrotateX)) rotateZ(var(--VrotateZ)) scale(var(--Vscale));
+}
+.job-title{
+
+}
+.job-link{
+    color: white;
+}
+.job-description{
+
+}
+.job-picture{
+    width: 360px;
+    --transform: scale(0.5);
+    transition: .9s;
+}
+.job-swapping{
+    transform: rotateX(var(--VrotateX)) rotateZ(var(--VrotateZ)) translateX(306px) translateY(-40px);
+    display: inline-block;
+}
+.job-button-swap{
+    width: 100px;
+    height: 40px;
+    font-size: 30px;
+    padding-bottom: 40px;
+}
+
+
+@media screen and (max-width: 1024px){
+
+}

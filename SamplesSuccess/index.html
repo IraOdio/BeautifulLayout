@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./../libs/bootstrap.min.css">
+    <link rel="stylesheet" href="./../style.css">
+    <title>Образцы</title>
+</head>
+<body>
+<div id="root">
+    <header>
+        <div class="nav justify-content-center">
+            <div v-for="item in secondNav" class="nav-item">
+                <a :href="item.link" class="nav-link">
+                    {{ item.name }}
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main-flex-layout container">
+            <div class="row">
+                <div class="mt-4 col-12 col-lg-6">
+                    <div class="card" style="">
+                        <img src="./img/layout1.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Чье-то портфолио</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                            <a href="./layout1/index.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 col-12 col-lg-6">
+                    <div class="card" style="">
+                        <img src="./img/layout2.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">цекерберг отдыхает</h5>
+                            <p class="card-text">
+                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                            </p>
+                            <a href="./layout2/index.html" target="_blank" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="./../libs/bootstrap.bundle.min.js"></script>
+<script src="./../libs/vue.js"></script>
+<script src="./../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+.background-body{
+    --heightResult:100vh;
+    overflow: hidden;
+}
+.wrapper{
+    background-image: url('img/Background.png');
+    background-size: cover;
+    background-repeat:no-repeat;
+
+}
+.nav-1,.nav-2,.chat,.profile{
+    height: var(--heightResult);
+}
+.nav-1 button, .nav-2 button{
+    background: transparent;
+    border: none;
+}
+.nav-1{
+    background: #000000;
+    mix-blend-mode: normal;
+    opacity: 0.7;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.nav-1__dots{
+    text-align: center;
+}
+.nav-1-flex{
+    display: flex;
+    flex-flow: column;
+    height: calc(var(--heightResult) - 20px);
+    justify-content: space-between;
+}
+.nav-1-xyeta1{
+
+}
+.nav-1-xyeta1__xyetishe{
+    text-align: center;
+}
+.nav-1-xyeta1__xyetishe img{
+
+}
+.nav-1-addXyeta1{
+    text-align: center;
+}
+.nav-1-addXyeta1__button{
+   background: transparent;
+    border: none;
+}
+.nav-1-addXyeta1__buttonText{
+    color:rgba(255,255,255,0.4);
+    font-size: 30px;
+}
+.nav-2{
+    background: #25272A;
+    mix-blend-mode: normal;
+    opacity: 0.75;
+}
+.nav-2__title{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+.nav-2__button-Nomad-List{
+    vertical-align: super;
+}
+.nav-2__settings-button{
+}
+.nav-2__tread-button{
+    vertical-align: bottom;
+}
+.nav-2__tread-title{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #B5B5B5;
+    vertical-align: text-bottom;
+}
+.nav-2-channel{
+
+}
+.nav-2-subTitle,.nav-2-subCount{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    text-transform: uppercase;
+    color: #919191;
+}
+.nav-2-channel__title{
+
+}
+.nav-2-channel__count{
+
+}
+.nav-2-channel-list{
+    height: 330px;
+    overflow: auto;
+}
+.nav-2 [class*="nav-2"]::-webkit-scrollbar { width: 9px; height: 3px }
+.nav-2 [class*="nav-2"]::-webkit-scrollbar-button {  background-color: transparent; }
+.nav-2 [class*="nav-2"]::-webkit-scrollbar-track-piece { background-color: transparent;}
+.nav-2 [class*="nav-2"]::-webkit-scrollbar-thumb { height: 50px; background-color: rgba(255,255,255,0.2); border-radius: 6px;}
+.nav-2-name-channel{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #B5B5B5;
+    padding: 6.5px 10px;
+    border-radius: 5px;
+}
+.nav-2-name-channel_active{
+    color:#fff;
+    background: gray;
+}
+.nav-2-friends{
+
+}
+.nav-2-fiends__title{}
+.nav-2-friends__count{}
+.nav-2-friends-list{
+    height: 330px;
+    overflow: auto;
+}
+.nav-2-friend + .nav-2-friend{
+    margin-top: 15px;
+}
+.nav-2-friend{
+    position: relative;
+}
+.nav-2-friend:before{
+    content:"";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #666666;
+    position: absolute;
+    top:10px;
+}
+.nav-2-friend_active:before{
+    background: #70CC16;
+}
+.nav-2-friend__avatar{
+    margin-left:15px;
+}
+.nav-2-friend__name{
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #B5B5B5;
+    margin-left:10px;
+}
+.chat{
+    background: #fff;
+}
+.profile{
+    background: #FFFFFF;
+    mix-blend-mode: normal;
+    opacity: 0.8;
+}
+/*
+TODO - Водное пространство
+*/
+
+.watter-wrapper{
+    display: none;
+    width: 100%;
+    height: calc(100vh - var(--heightResult));
+    text-align: center;
+    padding-top: 50px;
+    font-weight: bold;
+    font-size: 50px;
+}

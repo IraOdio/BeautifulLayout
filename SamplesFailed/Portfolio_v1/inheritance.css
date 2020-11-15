@@ -1,0 +1,63 @@
+/*
+Для создания новой цветовой схемы, список классов
+*/
+.default-theme{
+    background: linear-gradient(90deg, rgba(81, 119, 87, 0.6671043417366946) 0%, rgba(191, 208, 193, 0.67) 20%, rgba(183, 217, 225, 0.64) 80%, rgba(81, 119, 103, 0.7203256302521008) 100%)
+}
+.default-theme .header-title-link{
+    color: #6eb7a9;
+    font-weight: 600;
+    /*box-shadow: 0px 8px 7px 4px #336f6696;*/
+    /*text-shadow: 1px 1px 1px #0e4039;*/
+    box-shadow: 0px 8px 7px 4px #fff;
+    text-shadow: 1px 1px 1px #fff;
+    border-radius: 100% 0% 100% 0% / 44% 18% 82% 56% ;
+    padding: 5px 10px;
+    transition: .7s;
+}
+.default-theme .header-title-link:hover{
+    text-decoration: none;
+    color: #6eb7a9;
+    border-radius: 79% 21% 84% 16% / 56% 88% 12% 44%;
+    box-shadow: 0px 1px 7px 4px #fff
+}
+.default-theme .nav-link{
+    box-shadow: 1px 1px 8px 2px white;
+    text-shadow: 1px 1px 1px #fff;
+    transition: .7s;
+}
+.default-theme .nav-item:nth-child(odd) .nav-link{
+    border-radius: 100% 0% 100% 0% / 44% 18% 82% 56% ;
+}
+.default-theme .nav-item:nth-child(even) .nav-link{
+    border-radius: 31% 69% 74% 26% / 26% 93% 7% 74% ;
+}
+.default-theme .nav-link.active{
+    color: #6eb7a9;
+    font-weight: 600;
+    box-shadow: 0px 0px 7px 1px black;
+    text-shadow: 1px 1px 1px #0e4039;
+    border-radius: 100% 0% 100% 0% / 44% 18% 82% 56% ;
+}
+.default-theme .nav-item:nth-child(odd):hover .nav-link{
+    border-radius: 31% 69% 74% 26% / 26% 93% 7% 74% ;
+    box-shadow: 1px 1px 8px 2px #9151dd;
+}
+.default-theme .nav-item:nth-child(even):hover .nav-link{
+    border-radius: 100% 0% 100% 0% / 44% 18% 82% 56% ;
+    box-shadow: 1px 1px 8px 2px #101ddf;
+}
+.default-theme .nav-link.active:hover{
+    box-shadow: 1px 1px 8px 2px white;
+    text-shadow: 1px 1px 1px #fff;
+}
+.default-theme a{
+    font-weight: 100;
+}
+.default-theme a:hover{
+    text-decoration: none;
+}
+.default-theme .footer{
+    color: snow;
+    background: rgba(0,0,0,0.2);
+}

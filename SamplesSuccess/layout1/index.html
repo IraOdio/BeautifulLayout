@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio landing page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Load required Bootstrap and BootstrapVue CSS -->
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+
+    <!-- Load polyfills to support older browsers -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+
+    <!-- Load Vue followed by BootstrapVue -->
+    <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+
+    <!-- Load the following for BootstrapVueIcons support -->
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue-icons.min.js"></script>
+    <!-- -->
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./../figma-layout.css">
+
+</head>
+<body>
+<div class="layout-figma-info">
+    <a target="_blank" href="https://www.figma.com/file/5D9pDuLtS042hzaoN69Kd7/Free-Landing-Page-Template?node-id=0%3A1" class="layout-figma-link">
+        Link to layout on Figma
+    </a>
+    <br>
+    <a href="./../index.html">Click to return</a>
+</div>
+<div id="app">
+    <b-container fluid class="mb-5">
+        <b-row class="header mt-3 d-none d-lg-block">
+            <b-container>
+                <div>
+                    <b-nav class="justify-content-between">
+                        <b-nav-item link-classes="nav-link_active">Home</b-nav-item>
+                        <b-nav-item>About me</b-nav-item>
+                        <b-nav-item>Skills</b-nav-item>
+                        <b-nav-item>Portfolio</b-nav-item>
+                        <b-nav-item>Contacts</b-nav-item>
+                    </b-nav>
+                </div>
+                <hr class="header__hr">
+            </b-container>
+        </b-row>
+        <b-row>
+            <b-container>
+                <b-row>
+                    <b-col cols="6" lg="4">
+                        <h1 class="name-title" v-if="!language_self_Ru" v-html="text_Eng.name_title"></h1>
+                        <h1 class="name-title" v-else v-html="text_Ru.name_title"></h1>
+                    </b-col>
+                    <b-col cols="6" class="d-flex d-lg-none justify-content-end">
+                        <div>
+                            <b-dropdown id="dropdown-right" right text="" variant="" class="m-2">
+                                <b-dropdown-item href="#">Home</b-dropdown-item>
+                                <b-dropdown-item href="#">About me </b-dropdown-item>
+                                <b-dropdown-item href="#">Skills  </b-dropdown-item>
+                                <b-dropdown-item href="#">Portfolio  </b-dropdown-item>
+                                <b-dropdown-item href="#">Contacts  </b-dropdown-item>
+                            </b-dropdown>
+                        </div>
+                    </b-col>
+                    <b-col cols="12" lg="4" class="d-lg-flex justify-content-center align-items-end">
+                        <span class="author-self-text" v-if="language_self_Ru" v-text="text_Ru.author_self_text"></span>
+                        <span class="author-self-text" v-else v-text="text_Eng.author_self_text"></span>
+                    </b-col>
+                    <b-col cols="12" lg="4" class="d-none d-lg-flex align-items-end justify-content-end">
+                        <div class="switch-language">
+                            <button v-bind:class="{'switch-language__button_active':!language_self_Ru }" v-on:click="switchLanguage" class="switch-language__button">
+                                <span class="switch-language__text">
+                                    ENG
+                                </span>
+                            </button>
+                            <span class="switch-language__separator">_</span>
+                            <button v-bind:class="{ 'switch-language__button_active':language_self_Ru }" v-on:click="switchLanguage" class="switch-language__button">
+                                  <span class="switch-language__text">
+                                    RU
+                                 </span>
+                            </button>
+                        </div>
+                    </b-col>
+                </b-row>
+                <b-row class="mt-5">
+                    <b-col cols="12">
+                        <div class="carousel-slider">
+                            <b-carousel
+                                    id="carousel-fade"
+                                    style="text-shadow: 0px 0px 2px #000"
+                                    fade
+                                    indicators
+                                    img-width="900"
+                                    img-height="387">
+                                <b-carousel-slide
+                                        caption="First slide"
+                                        img-src="img/slide1.jpg">
+                                </b-carousel-slide>
+                                <b-carousel-slide
+                                        caption="Second Slide"
+                                        img-src="img/slide2.jpg">
+                                </b-carousel-slide>
+                                <b-carousel-slide
+                                        caption="Third Slide"
+                                        img-src="img/slide3.jpg">
+                                </b-carousel-slide>
+                            </b-carousel>
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-row>
+    </b-container>
+    <b-container fluid class="background-gray mt-5">
+        <b-container>
+            <b-row class="py-5">
+                <b-col cols="12" class="py-3">
+                    <div class="block-aboutMe">
+                        <h2 v-if="!language_self_Ru" class="block-aboutMe__title">
+                            {{ text_Eng.aboutMe_Title }}
+                        </h2>
+                        <h2 class="block-aboutMe__title" v-else>
+                            {{ text_Ru.aboutMe_Title }}
+                        </h2>
+                        <p v-text="text_Eng.aboutMe_Text1" v-if="!language_self_Ru" class="block-aboutMe__text"></p>
+                        <p v-text="text_Ru.aboutMe_Text1" v-else class="block-aboutMe__text"></p>
+                        <p v-text="text_Eng.aboutMe_Text2" v-if="!language_self_Ru" class="block-aboutMe__text"></p>
+                        <p v-text="text_Ru.aboutMe_Text2" v-else class="block-aboutMe__text"></p>
+                        <p v-text="text_Eng.aboutMe_Text3" v-if="!language_self_Ru" class="block-aboutMe__text"></p>
+                        <p v-text="text_Ru.aboutMe_Text3" v-else class="block-aboutMe__text"></p>
+                    </div>
+                </b-col>
+            </b-row>
+        </b-container>
+    </b-container>
+    <b-container fluid>
+        <b-row>
+            <b-col cols="12" class="mt-5">
+                <div class="skills">
+                    <h2 v-if="!language_self_Ru" v-text="text_Eng.skills_Title" class="skills__title"></h2>
+                    <h2 v-else v-text="text_Ru.skills_Title" class="skills__title"></h2>
+                    <div v-if="!language_self_Ru" v-text="text_Eng.skills_subTitle" class="skills__sub-Title my-5"></div>
+                    <div v-else v-text="text_Ru.skills_subTitle" class="skills__sub-Title my-5"></div>
+                </div>
+            </b-col>
+        </b-row>
+        <b-row class="mx-5">
+            <b-col cols="12" lg="3">
+                <div class="skills">
+                    <div class="skill-item">
+                        <img src="img/photoshop.jpg" alt="photoshop" class="skill-item__image">
+                        <div class="skill-item__title">
+                            Adode Photoshop
+                        </div>
+                        <div class="skill-item__raiting">
+                            <div class="rating-result">
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </b-col>
+            <b-col cols="12" lg="3">
+                <div class="skills">
+                    <div class="skill-item">
+                        <img src="img/illustrator.jpg" alt="illustrator" class="skill-item__image">
+                        <div class="skill-item__title">
+                            Adode Illustrator
+                        </div>
+                        <div class="skill-item__raiting">
+                            <div class="rating-result">
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </b-col>
+            <b-col cols="12" lg="3">
+                <div class="skills">
+                    <div class="skill-item">
+                        <img src="img/after_effects.jpg" alt="photoshop" class="skill-item__image">
+                        <div class="skill-item__title">
+                            Adode After Effects
+                        </div>
+                        <div class="skill-item__raiting">
+                            <div class="rating-result">
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </b-col>
+            <b-col cols="12" lg="3">
+                <div class="skills">
+                    <div class="skill-item">
+                        <img src="img/figma.png" alt="photoshop" class="skill-item__image">
+                        <div class="skill-item__title">
+                            Figma
+                        </div>
+                        <div class="skill-item__raiting">
+                            <div class="rating-result">
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span class="active"></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </b-col>
+        </b-row>
+    </b-container>
+    <b-container fluid class="background-gray mt-5">
+        <b-row>
+            <b-col cols="12">
+                <div class="portfolio">
+                    <h2 class="portfolio__title my-5">
+                        Portfolio
+                    </h2>
+                    <div class="portfolio-item">
+                        <img class="portfolio-item__image" src="img/p_fashion.jpg" alt="fashion">
+                        <a href="#" class="portfolio-item__link">
+                            Online fashion store - Homepage
+                        </a>
+                    </div>
+                    <div class="portfolio-item">
+                        <img class="portfolio-item__image" src="img/p_reebok.jpg" alt="reebok">
+                        <a href="#" class="portfolio-item__link">
+                            Reebok Store - Concept
+                        </a>
+                    </div>
+                    <div class="portfolio-item">
+                        <img class="portfolio-item__image" src="img/p_braun.jpg" alt="braun">
+                        <a href="#" class="portfolio-item__link">
+                            Braun Landing Page - Concept
+                        </a>
+                    </div>
+                </div>
+            </b-col>
+        </b-row>
+    </b-container>
+    <b-container fluid class="mt-5">
+        <b-row>
+            <b-col cols="12">
+                <div class="contacts">
+                    <h2 class="contacts__title">Contacts</h2>
+                    <div class="contacts__about">
+                        Want to know more or just chat? You are welcome!
+                    </div>
+                    <button class="contacts-button">
+                        <span class="contacts-button__text">Send message</span>
+                    </button>
+                    <div class="contacts-social-links">
+                        <a href="#" class="contacts-social-links__link">
+                            <img src="img/in.png" alt="in" class="contacts-social-links__image">
+                        </a>
+                        <a href="#" class="contacts-social-links__link">
+                            <img src="img/insta.png" alt="insta" class="contacts-social-links__image">
+                        </a>
+                        <a href="#" class="contacts-social-links__link">
+                            <img src="img/be.png" alt="be" class="contacts-social-links__image">
+                        </a>
+                        <a href="#" class="contacts-social-links__link">
+                            <img src="img/ball.png" alt="ball" class="contacts-social-links__image">
+                        </a>
+                    </div>
+                    <div class="contacts__social-description">
+                        Like me on LinkedIn, Instagram, Behance, Dribble
+                    </div>
+                </div>
+            </b-col>
+        </b-row>
+    </b-container>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
